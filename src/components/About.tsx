@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, Camera, Theater, Radio, Mic2, Film, Presentation, Video } from 'lucide-react';
 import { theme } from '../styles/theme';
-import marcusProfile from '../assets/marcus-profile.jpg';
+import marcusProfile from '../assets/marcus-profile.webp';
 
 const About = () => {
   const timeline = [

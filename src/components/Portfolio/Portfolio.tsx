@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 
 // Import images
-import zombieDateNight from '../../assets/zombie-date-night-in-tlokweng.jpg';
-import versesAtWork from '../../assets/verses-at-work.jpeg';
-import covidTunez from '../../assets/covid-tunez.jpg';
-import connectionToHome from '../../assets/connection-to-home.png';
-import myChildrenMyAfrica from '../../assets/my-children-my-africa.jpg';
-import brandCampaigns from '../../assets/brand-campaigns.jpg';
-import filmBizShow from '../../assets/the-film-biz-show.jpg';
+import zombieDateNight from '../../assets/zombie-date-night-in-tlokweng.webp';
+import versesAtWork from '../../assets/verses-at-work.webp';
+import covidTunez from '../../assets/covid-tunez.webp';
+import connectionToHome from '../../assets/connection-to-home.webp';
+import myChildrenMyAfrica from '../../assets/my-children-my-africa.webp';
+import brandCampaigns from '../../assets/brand-campaigns.webp';
+import filmBizShow from '../../assets/the-film-biz-show.webp';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
