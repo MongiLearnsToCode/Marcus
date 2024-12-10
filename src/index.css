@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cream text-night-blue font-sans;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight text-stage-purple;
+  }
+
+  .section-subtitle {
+    @apply text-night-blue/80 max-w-2xl mx-auto mb-16 leading-relaxed text-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-stage-purple text-white font-medium 
+           rounded-full hover:bg-drama-red transform hover:scale-105 transition-all duration-300
+           shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-stage-purple text-stage-purple 
+           font-medium rounded-full hover:bg-stage-purple hover:text-white transform hover:scale-105 
+           transition-all duration-300;
+  }
+
+  .spotlight-card {
+    @apply bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300
+           border border-spotlight-gold/20 hover:border-spotlight-gold;
+  }
+
+  .nav-link {
+    @apply text-night-blue hover:text-drama-red transition-colors duration-300 
+           relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+           after:bg-drama-red hover:after:w-full after:transition-all after:duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-stage-purple via-drama-red to-spotlight-gold 
+           bg-clip-text text-transparent;
+  }
+}

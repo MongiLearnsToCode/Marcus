@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1B1F2E;
+  --gold: #C5A572;
+  --beige: #E5D5B7;
+  --champagne: #D4C4A1;
+  --navy-light: #252A3D;
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--beige);
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--gold);
+  font-family: 'Garamond', serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#C5A572] text-[#1B1F2E] px-6 py-2 rounded hover:bg-[#D4C4A1] transition-colors duration-300;
+  }
+  
+  .btn-secondary {
+    @apply border border-[#C5A572] text-[#C5A572] px-6 py-2 rounded hover:bg-[#252A3D] transition-colors duration-300;
+  }
+
+  .nav-link {
+    @apply text-[#E5D5B7] hover:text-[#C5A572] transition-colors duration-300;
+  }
+
+  .section {
+    @apply py-24 px-4;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+}
