@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { theme } from '../../styles/theme';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
