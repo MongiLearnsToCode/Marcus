@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#1B1F2E] text-[#E5D5B7] py-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div className="col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-serif text-[#C5A572] mb-4">Marcus Mabusela</h3>
             <p className="text-[#E5D5B7] mb-6">
               Storyteller, filmmaker, and creative director passionate about bringing powerful narratives to life through various mediums.
