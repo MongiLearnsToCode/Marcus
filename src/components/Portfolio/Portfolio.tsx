@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 
+// Import images
+import zombieDateNight from '../../assets/zombie-date-night-in-tlokweng.jpg';
+import versesAtWork from '../../assets/verses-at-work.jpeg';
+import covidTunez from '../../assets/covid-tunez.jpg';
+import connectionToHome from '../../assets/connection-to-home.png';
+import myChildrenMyAfrica from '../../assets/my-children-my-africa.jpg';
+import brandCampaigns from '../../assets/brand-campaigns.jpg';
+import filmBizShow from '../../assets/the-film-biz-show.jpg';
+
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -12,7 +21,7 @@ const Portfolio = () => {
       title: "Zombie Date Night in Tlokweng",
       category: "Film",
       description: "Award-winning comedy-horror short film that won Best Film and Audience Choice Award at the 2023 Durban Film Mart NEFTI competition.",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80",
+      image: zombieDateNight,
       awards: ["Best Film 2023", "Audience Choice 2023"],
       year: '2023'
     },
@@ -20,7 +29,7 @@ const Portfolio = () => {
       title: "Verses at Work",
       category: "Film",
       description: "Co-produced with Malik Work, winning awards at both the 2016 Brazil International Film Festival and 2017 NYC Hip-Hop Film Festival.",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80",
+      image: versesAtWork,
       awards: ["Brazil Film Festival 2016", "NYC Hip-Hop Festival 2017"],
       year: '2017'
     },
@@ -28,14 +37,14 @@ const Portfolio = () => {
       title: "Covid Toonz",
       category: "Film",
       description: "Animation series sponsored by the National Arts Council of South Africa, addressing pandemic-related topics through animation.",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80",
+      image: covidTunez,
       year: ''
     },
     {
       title: "Connection to Home",
       category: "Theatre",
       description: "One-man show that won Best Production at the 2016 Goree Island International Arts Festival in Senegal.",
-      image: "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&q=80",
+      image: connectionToHome,
       awards: ["Best Production 2016"],
       year: '2016'
     },
@@ -43,14 +52,14 @@ const Portfolio = () => {
       title: "My Children, My Africa",
       category: "Theatre",
       description: "Performed in Athol Fugard's powerful play exploring themes of education and apartheid.",
-      image: "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&q=80",
+      image: myChildrenMyAfrica,
       year: ''
     },
     {
       title: "Brand Campaigns",
       category: "Voice",
       description: "Brand ambassador and copywriter for major brands including Phillips, Betway, Discovery Insure, KFC, and Vodacom.",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
+      image: brandCampaigns,
       brands: ["Phillips", "Betway", "Discovery Insure", "Kia Motors", "KFC", "Vodacom"],
       year: ''
     },
@@ -58,7 +67,7 @@ const Portfolio = () => {
       title: "The Film Biz Show",
       category: "Voice",
       description: "Host and executive producer of this industry-focused podcast featuring interviews with film and TV experts.",
-      image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80",
+      image: filmBizShow,
       guests: ["Jane Fry", "Oliver Schmidt", "Samad Davis", "Vuyo Dabula"],
       year: ''
     },
