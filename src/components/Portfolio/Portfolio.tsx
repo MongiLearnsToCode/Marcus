@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const filters = ['All', 'Film', 'Theatre', 'Voice'];
 
@@ -67,6 +68,16 @@ const Portfolio = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section id="portfolio" className="py-20 md:py-32 bg-[#1B1F2E]">
       <div className="container mx-auto px-6 md:px-8">
@@ -80,7 +91,7 @@ const Portfolio = () => {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="hidden md:flex flex-wrap justify-center gap-4 mb-12">
           {filters.map((filter) => (
             <button
               key={filter}
@@ -98,7 +109,7 @@ const Portfolio = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {(windowWidth < 768 ? projects : filteredProjects).map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
         </div>
