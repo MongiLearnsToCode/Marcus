@@ -13,6 +13,21 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    if (sectionId === '#top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }
+    setIsOpen(false);
+  };
+
   const navLinks = [
     { name: 'About Me', href: '#about' },
     { name: 'My Portfolio', href: '#portfolio' },
@@ -28,53 +43,62 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-[#C5A572] font-garamond text-2xl font-bold">
+            <button 
+              onClick={() => scrollToSection('#top')} 
+              className="text-[#C5A572] font-garamond text-2xl font-bold hover:text-[#D4C4A1] transition-colors duration-300"
+            >
               Oageng
-            </a>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
+                onClick={() => scrollToSection(link.href)}
                 className="nav-link text-[#E5D5B7] hover:text-[#C5A572] transition-duration-300"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
-            <button onClick={() => window.location.href='#contact'} className="bg-[#C5A572] text-[#1B1F2E] px-6 py-2 rounded hover:bg-[#D4C4A1] transition-colors duration-300">
-              Contact Us
+            <button 
+              onClick={() => scrollToSection('#contact')} 
+              className="bg-[#C5A572] text-[#1B1F2E] px-6 py-2 rounded hover:bg-[#D4C4A1] transition-colors duration-300"
+            >
+              Contact Me
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#C5A572] hover:text-[#E5D5B7] transition-colors duration-300"
+              className="text-[#E5D5B7] hover:text-[#C5A572] transition-duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-[#1B1F2E] border-t border-[#C5A572]/20">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-[#1B1F2E] rounded-lg">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="block px-3 py-2 text-[#E5D5B7] hover:text-[#C5A572] hover:bg-[#252A3D] rounded-md transition-colors duration-300"
+                  onClick={() => scrollToSection(link.href)}
+                  className="block w-full text-left px-3 py-2 text-[#E5D5B7] hover:text-[#C5A572] transition-duration-300"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
-              <button onClick={() => window.location.href='#contact'} className="bg-[#C5A572] text-[#1B1F2E] px-6 py-2 rounded hover:bg-[#D4C4A1] transition-colors duration-300 w-full mt-4">
-                Contact Us
+              <button
+                onClick={() => scrollToSection('#contact')}
+                className="block w-full text-left px-3 py-2 text-[#E5D5B7] hover:text-[#C5A572] transition-duration-300"
+              >
+                Contact Me
               </button>
             </div>
           </div>

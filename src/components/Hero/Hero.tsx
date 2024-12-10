@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-[#1B1F2E] pt-20 md:pt-24">
+    <section id="home" className="relative min-h-screen flex items-center bg-[#1B1F2E] pt-20 md:pt-24">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#252A3D] to-[#1B1F2E]"></div>
 
