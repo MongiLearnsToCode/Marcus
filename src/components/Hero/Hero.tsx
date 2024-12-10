@@ -43,35 +43,91 @@ const Hero = () => {
           {/* Hero Images */}
           <div className="relative h-[600px] grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <div className="relative h-[250px] rounded-lg overflow-hidden border border-[#C5A572]">
-                <img
-                  src="/images/hero-1.jpg"
-                  alt="Performance art showcase"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-[250px] rounded-lg overflow-hidden border border-[#C5A572] bg-[#252A3D]">
+                <picture>
+                  <source
+                    srcSet="/images/optimized/hero-1-400.jpg 400w,
+                            /images/optimized/hero-1-800.jpg 800w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <img
+                    src="/images/optimized/hero-1.jpg"
+                    alt="Performance art showcase"
+                    width={400}
+                    height={250}
+                    loading="eager"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    style={{
+                      backgroundImage: `url('/images/optimized/hero-1-placeholder.jpg')`,
+                      backgroundSize: 'cover'
+                    }}
+                  />
+                </picture>
               </div>
-              <div className="relative h-[300px] rounded-lg overflow-hidden border border-[#C5A572]">
-                <img
-                  src="/images/hero-2.jpg"
-                  alt="Filmmaking in action"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-[300px] rounded-lg overflow-hidden border border-[#C5A572] bg-[#252A3D]">
+                <picture>
+                  <source
+                    srcSet="/images/optimized/hero-2-400.jpg 400w,
+                            /images/optimized/hero-2-800.jpg 800w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <img
+                    src="/images/optimized/hero-2.jpg"
+                    alt="Filmmaking in action"
+                    width={400}
+                    height={300}
+                    loading="lazy"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    style={{
+                      backgroundImage: `url('/images/optimized/hero-2-placeholder.jpg')`,
+                      backgroundSize: 'cover'
+                    }}
+                  />
+                </picture>
               </div>
             </div>
             <div className="space-y-4 pt-8">
-              <div className="relative h-[300px] rounded-lg overflow-hidden border border-[#C5A572]">
-                <img
-                  src="/images/hero-3.jpg"
-                  alt="Theatrical performance"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-[300px] rounded-lg overflow-hidden border border-[#C5A572] bg-[#252A3D]">
+                <picture>
+                  <source
+                    srcSet="/images/optimized/hero-3-400.jpg 400w,
+                            /images/optimized/hero-3-800.jpg 800w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <img
+                    src="/images/optimized/hero-3.jpg"
+                    alt="Theatrical performance"
+                    width={400}
+                    height={300}
+                    loading="lazy"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    style={{
+                      backgroundImage: `url('/images/optimized/hero-3-placeholder.jpg')`,
+                      backgroundSize: 'cover'
+                    }}
+                  />
+                </picture>
               </div>
-              <div className="relative h-[250px] rounded-lg overflow-hidden border border-[#C5A572]">
-                <img
-                  src="/images/hero-4.jpg"
-                  alt="Storytelling moment"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+              <div className="relative h-[250px] rounded-lg overflow-hidden border border-[#C5A572] bg-[#252A3D]">
+                <picture>
+                  <source
+                    srcSet="/images/optimized/hero-4-400.jpg 400w,
+                            /images/optimized/hero-4-800.jpg 800w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <img
+                    src="/images/optimized/hero-4.jpg"
+                    alt="Storytelling moment"
+                    width={400}
+                    height={250}
+                    loading="lazy"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    style={{
+                      backgroundImage: `url('/images/optimized/hero-4-placeholder.jpg')`,
+                      backgroundSize: 'cover'
+                    }}
+                  />
+                </picture>
               </div>
             </div>
           </div>
